@@ -1,0 +1,30 @@
+<% layout('layouts/template') %>
+<h1>Products</h1>
+<br>
+<% for(let warehouse of warehouses) { %>
+<div class="d-inline-flex mb-3">
+    <div class="card" style="max-width: 300px;">
+      <img src="<%= warehouse.image %>" class="img-fluid" alt="..." width="200px" height="200px">
+      <div class="card-body">
+         <h5 class="card-title"><%= warehouse.name%></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <b>Price:</b> $<%= warehouse.unitPrice%>
+        </li>
+        <li class="list-group-item">
+            <b>Quantity:</b> <%= warehouse.quantity%>
+        </li>
+        <li class="list-group-item">
+           <a  class="btn btn-primary" href="/warehouses/<%= warehouse._id%>">
+              View Details
+           </a>
+        </li>
+     </ul>
+    </div>
+    
+
+</div>
+
+   
+<% }%>

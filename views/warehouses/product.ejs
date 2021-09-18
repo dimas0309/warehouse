@@ -1,0 +1,89 @@
+<% layout('layouts/template') %>
+<h1 class="text-center">
+   New Product
+</h1>
+<br>
+<div class="col-6 offset-3">
+   <form class="validated-form" action="/warehouses" method="POST" novalidate>
+       <div class="mb-3">
+          <label class="form-label" for="name">
+               Name
+          </label>
+          <input class="form-control" type="text" id="name" name="warehouse[name]" required>
+          <div class="valid-feedback">
+              Looks good!
+          </div>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="category">
+               Category
+          </label>
+          <input class="form-control" type="text" id="category" name="warehouse[category]" required>
+          <div class="valid-feedback">
+              Looks good!
+          </div>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="brand">
+               Brand
+          </label>
+          <input class="form-control" type="text" id="brand" name="warehouse[brand]" required>
+          <div class="valid-feedback">
+              Looks good!
+          </div>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="reference">
+               Reference
+          </label>
+          <input class="form-control" type="text" id="reference" name="warehouse[reference]" required>
+          <div class="valid-feedback">
+              Looks good!
+          </div>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="unitPrice">
+               UnitPrice
+          </label>
+          <input class="form-control" type="number" id="unitPrice" name="warehouse[unitPrice]" placeholder="0.00" required>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="quantity">
+               Quantity
+          </label>
+          <input class="form-control" type="number" id="quantity" name="warehouse[quantity]" placeholder="0" required>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="shelf">
+               Select Shelf
+          </label>
+          <select name="warehouse[shelf]" id="shelf">
+               <% for(let shelf of shelves) {%>
+                <option value="<%= shelf %>">
+                     <%= shelf %>
+                </option>
+                <%}%>
+              
+          </select>
+       </div>
+       <div class="mb-3">
+          <label class="form-label" for="bin">
+               Select Bin
+          </label>
+          <select name="warehouse[bin]" id="bin">
+              <% for(let bin of bins) { %>
+                <option value="<%= bin %>">
+                     <%= bin %>
+                </option>
+              <% } %>
+          </select>
+       </div> 
+       <div class="mb-3">
+          <button class="btn btn-success" type="submit">
+               Add Product
+          </button>
+       </div>
+   </form>
+</div>
+ 
+ 

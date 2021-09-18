@@ -1,0 +1,27 @@
+<% layout('layouts/template') %>
+<div class="row">
+   <div class="col-6 offset-3 mb-3">
+       <div class="card" style="width: 18rem;">
+         <img src="<%= warehouse.image%>" class="card-img-top" alt="...">
+         <div class="card-body">
+            <h5 class="card-text">
+               <%= warehouse.name %>
+            </h5>
+            <p class="card-text">
+              <b>Price:</b> $<%= warehouse.unitPrice%>
+            </p>
+            <p class="card-text">
+              <b>Quantity:</b> <%= warehouse.quantity%>
+            </p>
+            <p class="card-text">
+              <b>Location:</b> <%= warehouse.shelf%><%= warehouse.bin%>
+            </p>
+        </div>
+        <div class="card-body">
+            <a class="card-link btn btn-primary" href="/warehouses/<%= warehouse._id%>/edit">
+               Edit
+            </a>
+        </div>
+      </div>
+   </div>
+</div>
